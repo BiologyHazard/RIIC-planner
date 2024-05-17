@@ -10,8 +10,9 @@ class 订单详情(NamedTuple):
 
 
 class 贸易站数据:
-    def __init__(self, 订单列表: list[订单详情]) -> None:
+    def __init__(self, 订单列表: list[订单详情], 贸易站名称: str = '') -> None:
         self.订单列表: list[订单详情] = 订单列表
+        self.贸易站名称: str = 贸易站名称
 
     @property
     def 每秒基础工时获得龙门币(self) -> Fraction:
@@ -59,7 +60,7 @@ class 贸易站数据:
         return self.生产1龙门币需要的秒基础工时 / Fraction(54, 5)
 
     @classmethod
-    def new(cls, 贸易站等级: int, 但书: int | None, 龙舌兰: int | None, 裁缝: str | None) -> Self:
+    def new(cls, 贸易站等级: int, 但书: int | None, 龙舌兰: int | None, 裁缝: str | None, 贸易站名称: str = '') -> Self:
         需要秒基础工时列表: list[int] = [8640, 12600, 16560]
         if 贸易站等级 == 1:
             订单概率列表: list[Fraction] = [Fraction(100, 100)]
@@ -103,4 +104,4 @@ class 贸易站数据:
         订单列表: list[订单详情] = []
         for 概率, 需要秒基础工时, 消耗赤金, 获得龙门币 in zip(订单概率列表, 需要秒基础工时列表, 消耗赤金列表, 获得龙门币列表):
             订单列表.append(订单详情(概率, 需要秒基础工时, 消耗赤金, 获得龙门币))
-        return cls(订单列表)
+        return cls(订单列表, 贸易站名称)
