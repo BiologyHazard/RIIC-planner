@@ -1,12 +1,20 @@
+import math
+from typing import Any
+
 import pulp
 import yaml
-from typing import Any
 
 from 贸易站 import 贸易站数据
 
 
 def divide(x, y):
-    return x / y if y != 0 else 0
+    if y != 0:
+        return x / y
+    if x == 0:
+        return math.nan
+    if x > 0:
+        return math.inf
+    return -math.inf
 
 
 def 递归获取变量的值(变量) -> Any:
@@ -284,19 +292,19 @@ def main():
 
     # 求解
     求解状态_假设无溢出 = 线性规划问题_假设无溢出.solve()
-    assert 求解状态_假设无溢出 == pulp.LpStatusOptimal, \
+    assert 求解状态_假设无溢出 in (pulp.LpStatusOptimal, pulp.LpStatusInfeasible), \
         f'假设无溢出时求解失败，结果为{pulp.LpStatus[求解状态_假设无溢出]}'
     求解结果_假设无溢出 = 递归获取变量的值(变量)
     求解结果_假设无溢出['基建综合产出'] = 求解结果_假设无溢出['基建综合产出_假设无溢出']
 
     求解状态_假设作战记录溢出 = 线性规划问题_假设作战记录溢出.solve()
-    assert 求解状态_假设作战记录溢出 == pulp.LpStatusOptimal, \
+    assert 求解状态_假设作战记录溢出 in (pulp.LpStatusOptimal, pulp.LpStatusInfeasible), \
         f'假设作战记录溢出时求解失败，结果为{pulp.LpStatus[求解状态_假设作战记录溢出]}'
     求解结果_假设作战记录溢出 = 递归获取变量的值(变量)
     求解结果_假设作战记录溢出['基建综合产出'] = 求解结果_假设作战记录溢出['基建综合产出_假设作战记录溢出']
 
     求解状态_假设龙门币溢出 = 线性规划问题_假设龙门币溢出.solve()
-    assert 求解状态_假设龙门币溢出 == pulp.LpStatusOptimal, \
+    assert 求解状态_假设龙门币溢出 in (pulp.LpStatusOptimal, pulp.LpStatusInfeasible), \
         f'假设龙门币溢出时求解失败，结果为{pulp.LpStatus[求解状态_假设龙门币溢出]}'
     求解结果_假设龙门币溢出 = 递归获取变量的值(变量)
     求解结果_假设龙门币溢出['基建综合产出'] = 求解结果_假设龙门币溢出['基建综合产出_假设龙门币溢出']
