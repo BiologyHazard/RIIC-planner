@@ -1,0 +1,122 @@
+1级龙门币贸易站: &level_1_LMD_trading_post
+  贸易站等级: 1
+  但书: null
+  龙舌兰: null
+  裁缝: null
+
+1级龙门币贸易站，进驻但书II: &level_1_LMD_trading_post_with_E2_Proviso
+  贸易站等级: 1
+  但书: 2
+  龙舌兰: null
+  裁缝: null
+
+2级龙门币贸易站: &level_2_LMD_trading_post
+  贸易站等级: 2
+  但书: null
+  龙舌兰: null
+  裁缝: null
+
+2级龙门币贸易站，进驻但书II: &level_2_LMD_trading_post_with_E2_Proviso
+  贸易站等级: 2
+  但书: 2
+  龙舌兰: null
+  裁缝: null
+
+3级龙门币贸易站: &level_3_LMD_trading_post
+  贸易站等级: 3
+  但书: null
+  龙舌兰: null
+  裁缝: null
+
+3级龙门币贸易站，进驻但书II: &level_3_LMD_trading_post_with_E2_Proviso
+  贸易站等级: 3
+  但书: 2
+  龙舌兰: null
+  裁缝: null
+
+3级龙门币贸易站，进驻龙舌兰II: &level_3_LMD_trading_post_with_E2_Tequilla
+  贸易站等级: 3
+  但书: null
+  龙舌兰: 2
+  裁缝: null
+
+3级龙门币贸易站，进驻龙舌兰II、裁缝·α: &level_3_LMD_trading_post_with_E2_Tequilla_and_tailoring_alpha
+  贸易站等级: 3
+  但书: null
+  龙舌兰: 2
+  裁缝: α
+
+3级龙门币贸易站，进驻龙舌兰II、裁缝·β: &level_3_LMD_trading_post_with_E2_Tequilla_and_tailoring_beta
+  贸易站等级: 3
+  但书: null
+  龙舌兰: 2
+  裁缝: β
+
+3级龙门币贸易站，进驻但书II、龙舌兰II: &level_3_LMD_trading_post_with_E2_Proviso_and_E2_Tequilla
+  贸易站等级: 3
+  但书: 2
+  龙舌兰: 2
+  裁缝: null
+
+3级龙门币贸易站，进驻但书II、龙舌兰II、裁缝·α: &level_3_LMD_trading_post_with_E2_Proviso_and_E2_Tequilla_and_tailoring_alpha
+  贸易站等级: 3
+  但书: 2
+  龙舌兰: 2
+  裁缝: α
+
+3级龙门币贸易站，进驻但书II、龙舌兰II、裁缝·β: &level_3_LMD_trading_post_with_E2_Proviso_and_E2_Tequilla_and_tailoring_beta
+  贸易站等级: 3
+  但书: 2
+  龙舌兰: 2
+  裁缝: β
+
+# == 以上内容请不要修改 ==
+
+钱书价值比: 1.22
+龙门币价值: 0.0036
+# 作战记录价值 = 龙门币价值 / 钱书价值比
+信用价值: 0.04
+公开招募刷新价值: 19.07878202
+
+目标钱书比: 1.4
+目标赤金: -5
+溢出折算系数: 0.5
+
+候选排班表:
+  -
+    排班表名称: 252 21贸 33作 332赤
+    贸易站列表:  # 用于计算无人机加速策略，因此，如果不跑单，但是在加速龙门币时会把但书、龙舌兰放一起，也应该填写“但书: 2, 龙舌兰: 2”
+      - *level_1_LMD_trading_post_with_E2_Proviso
+      - *level_2_LMD_trading_post_with_E2_Proviso
+    每日产出:
+      作战记录: 34500
+      赤金: 5.580516432
+      龙门币: 65143.07512
+      无人机: 313.75
+      信用: 813.3785366
+      公开招募刷新: 2.945833333
+    至少分配无人机用于加速:
+      作战记录: 0
+      赤金: 0
+      龙门币:
+        - 0  # 需与贸易站列表中的顺序对应
+        - 0
+
+  -
+    排班表名称: 252 21贸 333作 32赤
+    贸易站列表:
+      - *level_1_LMD_trading_post_with_E2_Proviso
+      - *level_2_LMD_trading_post_with_E2_Proviso
+    每日产出:
+      作战记录: 53658.33333
+      赤金: -41.60721831
+      龙门币: 64426.52582
+      无人机: 313.75
+      信用: 813.3785366
+      公开招募刷新: 2.945833333
+    至少分配无人机用于加速:
+      作战记录: 0
+      赤金: 0
+      龙门币:
+        - 0
+        - 0
